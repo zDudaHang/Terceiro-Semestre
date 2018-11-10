@@ -26,7 +26,7 @@ int main() {
         if (word.compare("0") == 0) {
             break;
         }
-        trie.verifyTypeOfWord(word);
+        trie.isPrefix(word);
     }
 
     return 0;

@@ -34,25 +34,35 @@ class Parser {
 	    return dicText;
  	}
 
- 	void parsing(std::string dicText, structures::Trie trie) {
+ 	void parsing(std::string dicText, structures::Trie trie) {  //!!!
  		size_t begin = 0, endWord, end;
- 		while (begin < dicText.size()) {
- 			begin = dicText.find("[", begin);
- 			if (begin == std::string::npos) {
+ 		size_t POS = 0;
+
+ 		std::string dicTmp = dicText.substr(begin);
+
+        while (1) {
+ 			begin = dicTmp.find("[", begin);
+ 			if (begin == -1)
  				break;
- 			}
- 			endWord = dicText.find("]", begin);
- 			if (endWord == std::string::npos) {
+ 			endWord = dicTmp.find("]", begin);
+ 			if (endWord == -1)
  				break;
- 			}
- 			end = dicText.find("\n", begin);
- 			if (end == std::string::npos) {
+ 			end = dicTmp.find("\n", begin);
+ 			if (end == -1)
  				break;
- 			}
- 			std::string word = dicText.substr(begin + 1, endWord - begin - 1);
- 			unsigned long position = begin;
+            
+            std::string word = dicTmp.substr(begin + 1, endWord - 1);  //!!!
+            
+ 			unsigned long position = POS;
  			unsigned long length = end - begin;
- 			begin++;
+
+      //       std::cout << word << std:: endl;
+		    // std::cout << "[" << position << "] " << "[" << length << "] " << "\n-------------\n";
+
+		    POS += length + 1;
+            dicTmp = dicText.substr(POS);
+
+
  			trie.insert(word, position, length);
  		}
  	}
