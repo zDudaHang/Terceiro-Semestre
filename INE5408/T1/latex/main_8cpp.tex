@@ -1,0 +1,513 @@
+\hypertarget{main_8cpp}{}\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+
+
+Primeiro trabalho da disciplina de Estrutura de Dados(\+I\+N\+E5408).  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}linked\+\_\+stack.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linked\+\_\+queue.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classstructures_1_1ElementToSee}{structures\+::\+Element\+To\+See}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacestructures}{structures}
+\begin{DoxyCompactList}\small\item\em Copyright 2018 Maria Eduarda de Melo Hang. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{main_8cpp_ad7ad8d67f833642b881180a9ba81e15f}{get\+X\+M\+L\+Text} (char xmlfilename\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Leitura do arquivo xml e armazenamento do respectivo texto. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_af3e43fb298e5b8f503703685dfc23d23}{counting\+Width\+Tags} (std\+::string X\+M\+Ltext)
+\begin{DoxyCompactList}\small\item\em Contagem das tags \char`\"{}$<$width$>$\char`\"{}. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_af2b59f8887b5a6bf75d4666b00e4815d}{counting\+Height\+Tags} (std\+::string X\+M\+Ltext)
+\begin{DoxyCompactList}\small\item\em Contagem das tags \char`\"{}$<$height$>$\char`\"{}. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a8371bf9943c9d71d1edd5f635fc6e7ac}{counting\+Name\+Tags} (std\+::string X\+M\+Ltext)
+\begin{DoxyCompactList}\small\item\em Contagem das tags \char`\"{}$<$name$>$\char`\"{}. \end{DoxyCompactList}\item 
+bool \hyperlink{main_8cpp_aab70c8c83c6f2052ae314fca46147f1b}{find\+The\+Begin\+Of\+X\+ML} (std\+::string X\+M\+Ltext)
+\begin{DoxyCompactList}\small\item\em Verificação da existência da tag \char`\"{}$<$dataset$>$\char`\"{}. \end{DoxyCompactList}\item 
+bool \hyperlink{main_8cpp_ab00b42e16b61b25a9ed03a75fad135b4}{find\+The\+End\+Of\+X\+ML} (std\+::string X\+M\+Ltext)
+\begin{DoxyCompactList}\small\item\em Verificação da existência da tag \char`\"{}$<$/dataset$>$\char`\"{}. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a99c00fc658e4cfb7b88e1264cac634fd}{look\+Up} (int $\ast$$\ast$matrix, int line, int column)
+\begin{DoxyCompactList}\small\item\em Verificando o elemento acima do elemento referência. \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \hyperlink{main_8cpp_a11b33dfaa6c3264f70269f2f960bda30}{create\+Matrix\+Base} (int lines, int columns)
+\begin{DoxyCompactList}\small\item\em Criação de uma matriz nula. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_ad4d269b04f7a3e03c4ba9c4590f668c5}{look\+Left} (int $\ast$$\ast$matrix, int line, int column)
+\begin{DoxyCompactList}\small\item\em Verificando o elemento à esquerda do elemento referência. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{main_8cpp_aeea16cc55e03e11286d0f67377546246}{cleaning\+Matrix\+String} (std\+::string string\+Matrix)
+\begin{DoxyCompactList}\small\item\em Retirada do caractere de quebra de linha das strings das matrizes. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{main_8cpp_a93f0aeb2b15fbc361118a08869d71c80}{get\+Matrix\+Widths} (std\+::string X\+M\+Ltext, int count\+Widths)
+\begin{DoxyCompactList}\small\item\em Extração das colunas das matrizes. \end{DoxyCompactList}\item 
+std\+::string $\ast$ \hyperlink{main_8cpp_a5641cbfa268d04ca53d7455517a65f78}{get\+X\+M\+L\+Matrix} (std\+::string X\+M\+Ltext, int counter)
+\begin{DoxyCompactList}\small\item\em Extração das matrizes. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{main_8cpp_a883198d3926ad62b7dedc590e66a3197}{get\+Matrix\+Heights} (std\+::string X\+M\+Ltext, int count\+Heights)
+\begin{DoxyCompactList}\small\item\em Extração das linhas das matrizes. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a93f55add296e10462fb0a492afc81197}{look\+Down} (int $\ast$$\ast$matrix, int line, int column, int lines)
+\begin{DoxyCompactList}\small\item\em Verificando o elemento abaixo do elemento referência. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a5af6beed6446499ed739f7dac94025be}{look\+Right} (int $\ast$$\ast$matrix, int line, int column, int columns)
+\begin{DoxyCompactList}\small\item\em Verificando o elemento à direita do elemento referência. \end{DoxyCompactList}\item 
+std\+::string $\ast$ \hyperlink{main_8cpp_a0fad19e1d327b8b2a573dd7d77aa505c}{getting\+Image\+Names} (std\+::string X\+M\+Ltext, int count\+Names)
+\begin{DoxyCompactList}\small\item\em Extração dos nomes das imagens. \end{DoxyCompactList}\item 
+int $\ast$$\ast$ \hyperlink{main_8cpp_ad312896100129e8be16d90ce24da2691}{transform\+To\+Int\+Matrix} (std\+::string string\+Matrix, int lines, int columns)
+\begin{DoxyCompactList}\small\item\em Transformação das matrizes do arquivo xml em matrizes inteiras. \end{DoxyCompactList}\item 
+void \hyperlink{main_8cpp_a78ee5a2a627636054ba235d1018c06d5}{parsing\+X\+ML} (std\+::string X\+M\+Ltext, \hyperlink{classstructures_1_1LinkedStack}{structures\+::\+Linked\+Stack}$<$ std\+::string $>$ stack\+To\+Tags)
+\begin{DoxyCompactList}\small\item\em Verificação dos fechamentos das tags no arquivo xml. \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_a3c7abfa5a300162f8080613a4dfc054c}{search\+Matrix} (int $\ast$$\ast$matrix\+X\+ML, int $\ast$$\ast$matrix\+Auxiliar, int lines, int columns, \hyperlink{classstructures_1_1LinkedQueue}{structures\+::\+Linked\+Queue}$<$ \hyperlink{classstructures_1_1ElementToSee}{structures\+::\+Element\+To\+See} $>$ elements\+Queue)
+\begin{DoxyCompactList}\small\item\em Rotulamento da Matriz (vizinhança 4). \end{DoxyCompactList}\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\begin{DoxyCompactList}\small\item\em Recebe o nome do arquivo como entrada e chama todos os metodos necessarios. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Primeiro trabalho da disciplina de Estrutura de Dados(\+I\+N\+E5408). 
+
+Propósito\+: Verificação do fechamento de \char`\"{}tags\char`\"{} no arquivo xml mediante uma pilha encadeada de strings e rotulação das imagens binárias, presentes no segmento \char`\"{}$<$data$>$\char`\"{}, com o uso de vizinhança 4, utilizando duas filas encadeadas contendo\+: matrizes inteiras e Element\+To\+See (struct definida).
+
+\begin{DoxyAuthor}{Author}
+Maria Eduarda de Melo Hang 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+06 October 2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_aeea16cc55e03e11286d0f67377546246}\label{main_8cpp_aeea16cc55e03e11286d0f67377546246}} 
+\index{main.\+cpp@{main.\+cpp}!cleaning\+Matrix\+String@{cleaning\+Matrix\+String}}
+\index{cleaning\+Matrix\+String@{cleaning\+Matrix\+String}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{cleaning\+Matrix\+String()}{cleaningMatrixString()}}
+{\footnotesize\ttfamily std\+::string cleaning\+Matrix\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{string\+Matrix }\end{DoxyParamCaption})}
+
+
+
+Retirada do caractere de quebra de linha das strings das matrizes. 
+
+Caso o caractere de quebra de linha seja encontrado nessa string, será pego o índice e removido com o uso do método erase até que não reste mais nenhum.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+Matrix} & A string que contém uma das matrizes do arquivo xml. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Uma string sem o caractere de quebra de linha presente. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_af2b59f8887b5a6bf75d4666b00e4815d}\label{main_8cpp_af2b59f8887b5a6bf75d4666b00e4815d}} 
+\index{main.\+cpp@{main.\+cpp}!counting\+Height\+Tags@{counting\+Height\+Tags}}
+\index{counting\+Height\+Tags@{counting\+Height\+Tags}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{counting\+Height\+Tags()}{countingHeightTags()}}
+{\footnotesize\ttfamily int counting\+Height\+Tags (\begin{DoxyParamCaption}\item[{std\+::string}]{X\+M\+Ltext }\end{DoxyParamCaption})}
+
+
+
+Contagem das tags \char`\"{}$<$height$>$\char`\"{}. 
+
+Ao encontrar a tag \char`\"{}$<$height$>$\char`\"{}, o contador será incrementado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+M\+Ltext} & A string que contém o texto arquivo xml. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um inteiro representando a quantidade de tags \char`\"{}$<$height$>$\char`\"{} encontradas. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a8371bf9943c9d71d1edd5f635fc6e7ac}\label{main_8cpp_a8371bf9943c9d71d1edd5f635fc6e7ac}} 
+\index{main.\+cpp@{main.\+cpp}!counting\+Name\+Tags@{counting\+Name\+Tags}}
+\index{counting\+Name\+Tags@{counting\+Name\+Tags}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{counting\+Name\+Tags()}{countingNameTags()}}
+{\footnotesize\ttfamily int counting\+Name\+Tags (\begin{DoxyParamCaption}\item[{std\+::string}]{X\+M\+Ltext }\end{DoxyParamCaption})}
+
+
+
+Contagem das tags \char`\"{}$<$name$>$\char`\"{}. 
+
+Ao encontrar a tag \char`\"{}$<$name$>$\char`\"{}, o contador será incrementado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+M\+Ltext} & A string que contém o texto arquivo xml. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um inteiro representando a quantidade de tags \char`\"{}$<$name$>$\char`\"{} encontradas. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_af3e43fb298e5b8f503703685dfc23d23}\label{main_8cpp_af3e43fb298e5b8f503703685dfc23d23}} 
+\index{main.\+cpp@{main.\+cpp}!counting\+Width\+Tags@{counting\+Width\+Tags}}
+\index{counting\+Width\+Tags@{counting\+Width\+Tags}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{counting\+Width\+Tags()}{countingWidthTags()}}
+{\footnotesize\ttfamily int counting\+Width\+Tags (\begin{DoxyParamCaption}\item[{std\+::string}]{X\+M\+Ltext }\end{DoxyParamCaption})}
+
+
+
+Contagem das tags \char`\"{}$<$width$>$\char`\"{}. 
+
+Ao encontrar a tag \char`\"{}$<$width$>$\char`\"{}, o contador será incrementado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+M\+Ltext} & A string que contém o texto arquivo xml. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um inteiro representando a quantidade de tags \char`\"{}$<$width$>$\char`\"{} encontradas. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a11b33dfaa6c3264f70269f2f960bda30}\label{main_8cpp_a11b33dfaa6c3264f70269f2f960bda30}} 
+\index{main.\+cpp@{main.\+cpp}!create\+Matrix\+Base@{create\+Matrix\+Base}}
+\index{create\+Matrix\+Base@{create\+Matrix\+Base}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{create\+Matrix\+Base()}{createMatrixBase()}}
+{\footnotesize\ttfamily int $\ast$$\ast$ create\+Matrix\+Base (\begin{DoxyParamCaption}\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
+
+
+Criação de uma matriz nula. 
+
+Cria uma matriz nula para ser usada na rotulação, tendo a mesma quantidade de linhas e colunas que matriz do xml.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lines} & Quantiade de linhas. \\
+\hline
+{\em columns} & Quantidade de colunas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Uma matriz de inteiros nula. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_aab70c8c83c6f2052ae314fca46147f1b}\label{main_8cpp_aab70c8c83c6f2052ae314fca46147f1b}} 
+\index{main.\+cpp@{main.\+cpp}!find\+The\+Begin\+Of\+X\+ML@{find\+The\+Begin\+Of\+X\+ML}}
+\index{find\+The\+Begin\+Of\+X\+ML@{find\+The\+Begin\+Of\+X\+ML}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{find\+The\+Begin\+Of\+X\+M\+L()}{findTheBeginOfXML()}}
+{\footnotesize\ttfamily bool find\+The\+Begin\+Of\+X\+ML (\begin{DoxyParamCaption}\item[{std\+::string}]{X\+M\+Ltext }\end{DoxyParamCaption})}
+
+
+
+Verificação da existência da tag \char`\"{}$<$dataset$>$\char`\"{}. 
+
+Esse método, com a utilização do método find, procurará pela tag \char`\"{}$<$dataset$>$\char`\"{}, caso seja encontrada, será atribuído o índice onde se encontra e retornará verdadeiro. Caso contrário, retornará falso.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+M\+Ltext} & A string que contém o texto arquivo xml. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retornará verdadeiro se a tag \char`\"{}$<$dataset$>$\char`\"{} foi encontrada no arquivo. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_ab00b42e16b61b25a9ed03a75fad135b4}\label{main_8cpp_ab00b42e16b61b25a9ed03a75fad135b4}} 
+\index{main.\+cpp@{main.\+cpp}!find\+The\+End\+Of\+X\+ML@{find\+The\+End\+Of\+X\+ML}}
+\index{find\+The\+End\+Of\+X\+ML@{find\+The\+End\+Of\+X\+ML}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{find\+The\+End\+Of\+X\+M\+L()}{findTheEndOfXML()}}
+{\footnotesize\ttfamily bool find\+The\+End\+Of\+X\+ML (\begin{DoxyParamCaption}\item[{std\+::string}]{X\+M\+Ltext }\end{DoxyParamCaption})}
+
+
+
+Verificação da existência da tag \char`\"{}$<$/dataset$>$\char`\"{}. 
+
+Esse método, com a utilização do método find, procurará pela tag \char`\"{}$<$/dataset$>$\char`\"{}, caso seja encontrada, será atribuído o índice onde se encontra e retornará verdadeiro. Caso contrário, retornará falso.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+M\+Ltext} & A string que contém o texto arquivo xml. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retornará verdadeiro se a tag \char`\"{}$<$/dataset$>$\char`\"{} foi encontrada no arquivo. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a883198d3926ad62b7dedc590e66a3197}\label{main_8cpp_a883198d3926ad62b7dedc590e66a3197}} 
+\index{main.\+cpp@{main.\+cpp}!get\+Matrix\+Heights@{get\+Matrix\+Heights}}
+\index{get\+Matrix\+Heights@{get\+Matrix\+Heights}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{get\+Matrix\+Heights()}{getMatrixHeights()}}
+{\footnotesize\ttfamily int $\ast$ get\+Matrix\+Heights (\begin{DoxyParamCaption}\item[{std\+::string}]{X\+M\+Ltext,  }\item[{int}]{count\+Heights }\end{DoxyParamCaption})}
+
+
+
+Extração das linhas das matrizes. 
+
+Da mesma forma que o método parsing\+X\+ML, utiliza-\/se a função find da biblioteca de strings, nesse caso as strings padrão serão \char`\"{}$<$height$>$\char`\"{}, para obter o índice do primeiro caractere, e \char`\"{}$<$/height$>$\char`\"{}, para encontrar o índice do último caractere dessa tag. Posteriormente, será pego a substring presente no intervalo \mbox{[}begin, position -\/ begin\mbox{]}, sendo extraído apenas o número entre as duas tags. Por fim, essa substring será convertida em inteiro e guardada no array de inteiros heights. O begin será incrementado para buscar os novos índices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+M\+Ltext} & A string que contém o texto arquivo xml. \\
+\hline
+{\em count\+Heights} & Quantidade de valores que devem ser coletados da string(número de matrizes presentes no arquivo). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um array de inteiros contendo todos os valores de linhas de cada matriz contida no arquivo xml. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a93f0aeb2b15fbc361118a08869d71c80}\label{main_8cpp_a93f0aeb2b15fbc361118a08869d71c80}} 
+\index{main.\+cpp@{main.\+cpp}!get\+Matrix\+Widths@{get\+Matrix\+Widths}}
+\index{get\+Matrix\+Widths@{get\+Matrix\+Widths}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{get\+Matrix\+Widths()}{getMatrixWidths()}}
+{\footnotesize\ttfamily int $\ast$ get\+Matrix\+Widths (\begin{DoxyParamCaption}\item[{std\+::string}]{X\+M\+Ltext,  }\item[{int}]{count\+Widths }\end{DoxyParamCaption})}
+
+
+
+Extração das colunas das matrizes. 
+
+Da mesma forma que o método parsing\+X\+ML, utiliza-\/se a função find da biblioteca de strings, nesse caso as strings padrão serão \char`\"{}$<$width$>$\char`\"{}, para obter o índice do primeiro caractere, e \char`\"{}$<$/width$>$\char`\"{}, para encontrar o índice do último caractere dessa tag. Posteriormente, será pego a substring presente no intervalo \mbox{[}begin, position -\/ begin\mbox{]}, sendo extraído apenas o número entre as duas tags. Por fim, essa substring será convertida em inteiro e guardada no array de inteiros widths. O begin será incrementado para buscar os novos índices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+M\+Ltext} & A string que contém o texto arquivo xml. \\
+\hline
+{\em count\+Widths} & Quantidade de valores que devem ser coletados da string(número de matrizes presentes no arquivo). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um array de inteiros contendo todos os valores de colunas de cada matriz contida no arquivo xml. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a0fad19e1d327b8b2a573dd7d77aa505c}\label{main_8cpp_a0fad19e1d327b8b2a573dd7d77aa505c}} 
+\index{main.\+cpp@{main.\+cpp}!getting\+Image\+Names@{getting\+Image\+Names}}
+\index{getting\+Image\+Names@{getting\+Image\+Names}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{getting\+Image\+Names()}{gettingImageNames()}}
+{\footnotesize\ttfamily std\+::string $\ast$ getting\+Image\+Names (\begin{DoxyParamCaption}\item[{std\+::string}]{X\+M\+Ltext,  }\item[{int}]{count\+Names }\end{DoxyParamCaption})}
+
+
+
+Extração dos nomes das imagens. 
+
+Da mesma forma que o método parsing\+X\+ML, utiliza-\/se a função find da biblioteca de strings, nesse caso as strings padrão serão \char`\"{}$<$name$>$\char`\"{}, para obter o índice do primeiro caractere, e \char`\"{}$<$/name$>$\char`\"{}, para encontrar o índice do último caractere dessa tag. Posteriormente, será pego a substring presente no intervalo \mbox{[}begin, position -\/ begin\mbox{]}, sendo extraído apenas o número entre as duas tags. Por fim, essa substring será guardada no array de strings names. O begin será incrementado para buscar os novos índices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+M\+Ltext} & A string que contém o texto arquivo xml. \\
+\hline
+{\em count\+Names} & Quantidade de nomes que devem ser buscados. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um array de strings contendo todos os nomes das imagens. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a5641cbfa268d04ca53d7455517a65f78}\label{main_8cpp_a5641cbfa268d04ca53d7455517a65f78}} 
+\index{main.\+cpp@{main.\+cpp}!get\+X\+M\+L\+Matrix@{get\+X\+M\+L\+Matrix}}
+\index{get\+X\+M\+L\+Matrix@{get\+X\+M\+L\+Matrix}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{get\+X\+M\+L\+Matrix()}{getXMLMatrix()}}
+{\footnotesize\ttfamily std\+::string $\ast$ get\+X\+M\+L\+Matrix (\begin{DoxyParamCaption}\item[{std\+::string}]{X\+M\+Ltext,  }\item[{int}]{counter }\end{DoxyParamCaption})}
+
+
+
+Extração das matrizes. 
+
+Da mesma forma que nos métodos de extração de linhas e colunas das matrizes, esse método realizará a busca das matrizes contidas entre as tags com o padrão \char`\"{}$<$data$>$\char`\"{} e \char`\"{}$<$/data$>$\char`\"{}, pegando os respectivos índices e extraindo a substring no intervalo \mbox{[}begin, position -\/ begin\mbox{]} (a matriz). O begin será incrementado para buscar os novos índices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+M\+Ltext} & A string que contém o texto arquivo xml. \\
+\hline
+{\em counter} & Quantidade de matrizes presentes no arquivo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um array de strings contendo cada matrize do arquivo xml. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_ad7ad8d67f833642b881180a9ba81e15f}\label{main_8cpp_ad7ad8d67f833642b881180a9ba81e15f}} 
+\index{main.\+cpp@{main.\+cpp}!get\+X\+M\+L\+Text@{get\+X\+M\+L\+Text}}
+\index{get\+X\+M\+L\+Text@{get\+X\+M\+L\+Text}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{get\+X\+M\+L\+Text()}{getXMLText()}}
+{\footnotesize\ttfamily std\+::string get\+X\+M\+L\+Text (\begin{DoxyParamCaption}\item[{char}]{xmlfilename\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Leitura do arquivo xml e armazenamento do respectivo texto. 
+
+Primeiramente, tenta-\/se abrir o arquivo xml recebido no terminal, caso não seja possível, o programa sairá retorna 1 (erro). Após essa verificação, o ifstream source lerá caractere por caractere e concatenará com a variável local X\+M\+Ltext e terminará quando encontrar o E\+OF.
+
+
+\begin{DoxyParams}{Parameters}
+{\em xmlfilename} & Nome do arquivo xml que será aberto e lido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O texto do arquivo xml em formate de uma string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a93f55add296e10462fb0a492afc81197}\label{main_8cpp_a93f55add296e10462fb0a492afc81197}} 
+\index{main.\+cpp@{main.\+cpp}!look\+Down@{look\+Down}}
+\index{look\+Down@{look\+Down}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{look\+Down()}{lookDown()}}
+{\footnotesize\ttfamily int look\+Down (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrix,  }\item[{int}]{line,  }\item[{int}]{column,  }\item[{int}]{lines }\end{DoxyParamCaption})}
+
+
+
+Verificando o elemento abaixo do elemento referência. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & A matriz. \\
+\hline
+{\em line} & A linha do elemento de referência que deseja verificar. \\
+\hline
+{\em column} & A coluna do elemento de referência que deseja verificar. \\
+\hline
+{\em lines} & Quantidade de linhas da matriz para testar o limite do índice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retornará 1 caso o elemento debaixo contenha o valor 1, caso contrário, 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_ad4d269b04f7a3e03c4ba9c4590f668c5}\label{main_8cpp_ad4d269b04f7a3e03c4ba9c4590f668c5}} 
+\index{main.\+cpp@{main.\+cpp}!look\+Left@{look\+Left}}
+\index{look\+Left@{look\+Left}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{look\+Left()}{lookLeft()}}
+{\footnotesize\ttfamily int look\+Left (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrix,  }\item[{int}]{line,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+Verificando o elemento à esquerda do elemento referência. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & A matriz. \\
+\hline
+{\em line} & A linha do elemento de referência que deseja verificar. \\
+\hline
+{\em column} & A coluna do elemento de referência que deseja verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retornará 1 caso o elemento à esquerda contenha o valor 1, caso contrário, 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a5af6beed6446499ed739f7dac94025be}\label{main_8cpp_a5af6beed6446499ed739f7dac94025be}} 
+\index{main.\+cpp@{main.\+cpp}!look\+Right@{look\+Right}}
+\index{look\+Right@{look\+Right}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{look\+Right()}{lookRight()}}
+{\footnotesize\ttfamily int look\+Right (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrix,  }\item[{int}]{line,  }\item[{int}]{column,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
+
+
+Verificando o elemento à direita do elemento referência. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & A matriz. \\
+\hline
+{\em line} & A linha do elemento de referência que deseja verificar. \\
+\hline
+{\em column} & A coluna do elemento de referência que deseja verificar. \\
+\hline
+{\em columns} & Quantidade de colunas da matriz para testar o limite do índice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retornará 1 caso o elemento à direita contenha o valor 1, caso contrário, 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_a99c00fc658e4cfb7b88e1264cac634fd}\label{main_8cpp_a99c00fc658e4cfb7b88e1264cac634fd}} 
+\index{main.\+cpp@{main.\+cpp}!look\+Up@{look\+Up}}
+\index{look\+Up@{look\+Up}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{look\+Up()}{lookUp()}}
+{\footnotesize\ttfamily int look\+Up (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrix,  }\item[{int}]{line,  }\item[{int}]{column }\end{DoxyParamCaption})}
+
+
+
+Verificando o elemento acima do elemento referência. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & A matriz. \\
+\hline
+{\em line} & A linha do elemento de referência que deseja verificar. \\
+\hline
+{\em column} & A coluna do elemento de referência que deseja verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retornará 1 caso o elemento acima contenha o valor 1, caso contrário, 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Recebe o nome do arquivo como entrada e chama todos os metodos necessarios. 
+
+\mbox{\Hypertarget{main_8cpp_a78ee5a2a627636054ba235d1018c06d5}\label{main_8cpp_a78ee5a2a627636054ba235d1018c06d5}} 
+\index{main.\+cpp@{main.\+cpp}!parsing\+X\+ML@{parsing\+X\+ML}}
+\index{parsing\+X\+ML@{parsing\+X\+ML}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{parsing\+X\+M\+L()}{parsingXML()}}
+{\footnotesize\ttfamily void parsing\+X\+ML (\begin{DoxyParamCaption}\item[{std\+::string}]{X\+M\+Ltext,  }\item[{\hyperlink{classstructures_1_1LinkedStack}{structures\+::\+Linked\+Stack}$<$ std\+::string $>$}]{stack\+To\+Tags }\end{DoxyParamCaption})}
+
+
+
+Verificação dos fechamentos das tags no arquivo xml. 
+
+Usando o método find da biblioteca de strings, pegará o índice do primeiro caractere que for igual a \char`\"{}$<$\char`\"{}, depois o outro índice que for igual a \char`\"{}$>$\char`\"{} e por fim pegará uma substring, presente no intervalo \mbox{[}begin, end -\/ begin + 1\mbox{]} do texto do X\+ML e passará para a string auxiliar. Caso o caractere \char`\"{}/\char`\"{} seja encontrado, ele será retirado com o método erase. Posteriormente, haverá uma verificação no caso da pilha ser vazia, se a condição for verdadeira, essa string auxiliar será automaticamente empilhada. Caso contrário, o método verificará se o topo coincide com a string auxiliar, se for verdade, a pilha realizará um pop, caso contrário um push, colocando a auxiliar como parâmetro. Ao fim, o begin será incrementado para pegar o próximo índice do caractere que conter o \char`\"{}$<$\char`\"{}. Caso uma tag de fechamento foi encontrada e não for igual ao topo, o programa será finalizado e colocará \char`\"{}error\char`\"{} na tela.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X\+M\+Ltext} & A string que contém o texto arquivo xml. \\
+\hline
+{\em stack\+To\+Tags} & Uma pilha para guardar as tags. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{main_8cpp_a3c7abfa5a300162f8080613a4dfc054c}\label{main_8cpp_a3c7abfa5a300162f8080613a4dfc054c}} 
+\index{main.\+cpp@{main.\+cpp}!search\+Matrix@{search\+Matrix}}
+\index{search\+Matrix@{search\+Matrix}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{search\+Matrix()}{searchMatrix()}}
+{\footnotesize\ttfamily int search\+Matrix (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{matrix\+X\+ML,  }\item[{int $\ast$$\ast$}]{matrix\+Auxiliar,  }\item[{int}]{lines,  }\item[{int}]{columns,  }\item[{\hyperlink{classstructures_1_1LinkedQueue}{structures\+::\+Linked\+Queue}$<$ \hyperlink{classstructures_1_1ElementToSee}{structures\+::\+Element\+To\+See} $>$}]{elements\+Queue }\end{DoxyParamCaption})}
+
+
+
+Rotulamento da Matriz (vizinhança 4). 
+
+Primeiramente, o método percorrerá a matriz do xml e ao encontrar o valor 1 em um dos elementos, ocorrerá uma verificação para ver se já não foi visitado na matriz de rotulamento (se não foi visitado o valor será 0), caso não tenha sido visitado, será instanciado um elemento da classe Element\+To\+See para guardar a linha e coluna desse elemento, sendo inserido na fila de rotulamento, e o rótulo será aplicado aplicado a matriz de rotulamento na mesma linha e coluna. Posteriormente, os 4 vizinhos desse elemento serão verificados com os métodos look\+Up, look\+Down, look\+Right e look\+Left e depois se a matriz de rotulamento já não visitou esse vizinho outro elemento da classe Element\+To\+See será instanciado e inserido na fila de rotulamento e o rótulo atual será atribuído ao vizinho que atendeu às condições mostradas anteriormente. Por fim, o rótulo será incrementado se nenhum outro elemento conexo for encontrado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix\+X\+ML} & A matriz de inteiros do arquivo xml. \\
+\hline
+{\em matrix\+Auxiliar} & A matriz auxiliar de rotulamento. \\
+\hline
+{\em lines} & Quantidade de linhas da matriz. \\
+\hline
+{\em columns} & Quantidade de colunas da matriz. \\
+\hline
+{\em elements\+Queue} & Fila para guardar os elementos a serem verificados e seus vizinhos (vizinhança 4). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O maior rótulo atribuído. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8cpp_ad312896100129e8be16d90ce24da2691}\label{main_8cpp_ad312896100129e8be16d90ce24da2691}} 
+\index{main.\+cpp@{main.\+cpp}!transform\+To\+Int\+Matrix@{transform\+To\+Int\+Matrix}}
+\index{transform\+To\+Int\+Matrix@{transform\+To\+Int\+Matrix}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{transform\+To\+Int\+Matrix()}{transformToIntMatrix()}}
+{\footnotesize\ttfamily int $\ast$$\ast$ transform\+To\+Int\+Matrix (\begin{DoxyParamCaption}\item[{std\+::string}]{string\+Matrix,  }\item[{int}]{lines,  }\item[{int}]{columns }\end{DoxyParamCaption})}
+
+
+
+Transformação das matrizes do arquivo xml em matrizes inteiras. 
+
+Para realizar essa transformação, o método pegará caractere por caractere e inserir na matriz de inteiros em cada elemento da respectiva posição.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+Matrix} & A string que contém uma matriz do arquivo xml. \\
+\hline
+{\em lines} & Quantidade de linhas da matriz. \\
+\hline
+{\em columns} & Quantidade de colunas da matriz. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Uma matriz de inteiros contendo os valores (0 ou 1) da matrize do arquivo xml. 
+\end{DoxyReturn}

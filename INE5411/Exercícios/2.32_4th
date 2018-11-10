@@ -1,0 +1,31 @@
+a.
+void swap (int v[], int k, int j) {
+	int temp;
+	temp = v[k];
+	v[k] = v[j];
+	v[j] = temp;
+}
+
+SWAP:	sll $a1, $a1, 2 # 4k
+	sll $a2, $a2, 2 # 4j
+	add $t0, $a0, $a1 # v[k]
+	add $t1, $a0, $a2 # v[j]
+	lw $t2, 0 ($t0) # temp = v[k]
+	lw $t3, 0 ($t1) # t3 = v[j]
+	sw $t3, 0 ($t0) # v[k] = v[j]
+	sw $t2, 0 ($t1) # v[j] = temp
+	jr $ra
+
+
+b.
+void swap(int *p) {
+	int temp;
+	temp = *p;
+	*p = *(p+1);
+	*(p+1) = *p;
+}
+
+SWAP:	lw $t0, 0 ($a0) # temp = *p
+	lw $t1, 4 ($a0) # t1 = *(p+1)
+	sw $t1, 0 ($a0) # *p = *(p+1)
+	sw $t0, 4 ($a0) # *(p+1) = temp

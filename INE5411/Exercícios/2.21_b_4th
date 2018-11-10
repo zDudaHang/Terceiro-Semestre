@@ -1,0 +1,33 @@
+int my_global = 100;
+
+main () {
+	int x = 10;
+	int y = 20;
+	z = my_function(x, my_global);
+}
+
+int my_function(int x, int y) {
+	return x - y;
+}
+
+
+.data
+my_global: .word 100
+
+MAIN:
+
+addi $sp, $sp, -4
+sw $ra, 0 ($sp)
+lw $a1, my_global
+li $a0, 10 # x = 10
+li $t0, 20 # y = 20
+jal MY_FUNCTION
+add $t1, $v0, $0 # z = my_function(x, my_global)
+lw $ra, 0 ($sp)
+addi $sp, $sp, 4
+jr $ra
+
+MY_FUNCTION:
+
+sub $v0, $a0, $a1
+jr $ra

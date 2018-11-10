@@ -1,0 +1,49 @@
+a.
+int find(int a[], int n, int x) {
+	int i;
+	for( i = 0; i != n; i++) {
+		if (a[i] == x) {
+			return i;
+		}
+	}
+	return -1;
+}
+
+FIND:
+add $t1, $0, $0 # i = 0;
+loop:	beq $t1, $a1, done # se i == n, vá para done
+	sll $t2, $t1, 2 # t2 = 4i
+	add $t3, $t2, $a0 # t3 = 4i + &a[0]
+	lw $t2, 0($t3) # a[i]
+	addi $t1, $t1, 1 # i++
+	bne $t2, $a2, loop # se a[i] != x, volte para o loop
+	add $v0, $t1, $0 # a[i] == x e return i
+	jr $ra
+done:	addi $v0, $0, -1 # return -1
+	jr $ra 
+
+b. 
+
+int count(int a[], int n, int x) {
+	int res = 0;
+	int i;
+	for( i = 0; i != n; i++) {
+		if (a[i] == x) {
+			res += 1;
+		}
+	}
+	return res;
+}
+
+COUNT:
+add $t0, $0, $0 # i = 0;
+add $t1, $0, $0 # res = 0;
+loop:	beq $t0, $a1, done
+	sll $t2, $t0, 2 # t2 = 4i
+	add $t3, $t2, $a0 # t3 = 4i + &a[0]
+	lw $t2, 0 ($t3) # t2 = a[i]
+	addi $t0, $t0, 1
+	bne $t2, $a2, loop # se a[i] != x, volte para o loop
+	addi $t1, $t1, 1
+done:	add $v0, $t1, $0 
+	jr $ra
