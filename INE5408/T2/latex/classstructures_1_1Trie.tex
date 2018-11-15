@@ -1,0 +1,80 @@
+\hypertarget{classstructures_1_1Trie}{}\section{structures\+:\+:Trie Class Reference}
+\label{classstructures_1_1Trie}\index{structures\+::\+Trie@{structures\+::\+Trie}}
+
+
+Classe da \hyperlink{classstructures_1_1Trie}{Trie}. Estrutura de Dados responsável pela indexação das palavras.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classstructures_1_1Trie_af6cf71564b040dfc62bbdedbbab8271a}\label{classstructures_1_1Trie_af6cf71564b040dfc62bbdedbbab8271a}} 
+\hyperlink{classstructures_1_1Trie_af6cf71564b040dfc62bbdedbbab8271a}{Trie} ()
+\begin{DoxyCompactList}\small\item\em Construtor. A \hyperlink{classstructures_1_1Trie}{Trie} é construída com a raiz já instanciada, não pode existir nenhum caractere na raiz. \end{DoxyCompactList}\item 
+\hyperlink{classstructures_1_1Trie_a02b9941c124c9c6ab85eff56bef7cf77}{$\sim$\+Trie} ()=default
+\item 
+void \hyperlink{classstructures_1_1Trie_a70ff5a7364c0bb15028578596514cea4}{insert} (std\+::string word, unsigned long position, unsigned long length)
+\begin{DoxyCompactList}\small\item\em Inserção na \hyperlink{classstructures_1_1Trie}{Trie}. \end{DoxyCompactList}\item 
+bool \hyperlink{classstructures_1_1Trie_a9b959bfb880e7a4bb6a7e71540c0c82a}{is\+Prefix} (std\+::string word)
+\begin{DoxyCompactList}\small\item\em Busca ma palavra na \hyperlink{classstructures_1_1Trie}{Trie} e verifica se é um prefixo ou uma palavra. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe da \hyperlink{classstructures_1_1Trie}{Trie}. Estrutura de Dados responsável pela indexação das palavras. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstructures_1_1Trie_a02b9941c124c9c6ab85eff56bef7cf77}\label{classstructures_1_1Trie_a02b9941c124c9c6ab85eff56bef7cf77}} 
+\index{structures\+::\+Trie@{structures\+::\+Trie}!````~Trie@{$\sim$\+Trie}}
+\index{````~Trie@{$\sim$\+Trie}!structures\+::\+Trie@{structures\+::\+Trie}}
+\subsubsection{\texorpdfstring{$\sim$\+Trie()}{~Trie()}}
+{\footnotesize\ttfamily structures\+::\+Trie\+::$\sim$\+Trie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Destrutor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classstructures_1_1Trie_a70ff5a7364c0bb15028578596514cea4}\label{classstructures_1_1Trie_a70ff5a7364c0bb15028578596514cea4}} 
+\index{structures\+::\+Trie@{structures\+::\+Trie}!insert@{insert}}
+\index{insert@{insert}!structures\+::\+Trie@{structures\+::\+Trie}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void structures\+::\+Trie\+::insert (\begin{DoxyParamCaption}\item[{std\+::string}]{word,  }\item[{unsigned long}]{position,  }\item[{unsigned long}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserção na \hyperlink{classstructures_1_1Trie}{Trie}. 
+
+A inserção será por caractere da palavra recebida no parâmetro, sendo que a cada iteração o ponteiro it receberá o filho correspondente ao caractere da palavra para inserir no próximo corretamente. O último caractere da palavra receberá a posição e o comprimento dela, garantindo que ele é o final de uma palavra.
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & A palavra que será inserida. \\
+\hline
+{\em position} & A posição em que se encontra o primeiro caractere dessa palavra no dicionário. \\
+\hline
+{\em length} & O comprimento do texto correspondente da palavra no dicionário. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classstructures_1_1Trie_a9b959bfb880e7a4bb6a7e71540c0c82a}\label{classstructures_1_1Trie_a9b959bfb880e7a4bb6a7e71540c0c82a}} 
+\index{structures\+::\+Trie@{structures\+::\+Trie}!is\+Prefix@{is\+Prefix}}
+\index{is\+Prefix@{is\+Prefix}!structures\+::\+Trie@{structures\+::\+Trie}}
+\subsubsection{\texorpdfstring{is\+Prefix()}{isPrefix()}}
+{\footnotesize\ttfamily bool structures\+::\+Trie\+::is\+Prefix (\begin{DoxyParamCaption}\item[{std\+::string}]{word }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Busca ma palavra na \hyperlink{classstructures_1_1Trie}{Trie} e verifica se é um prefixo ou uma palavra. 
+
+A busca será caractere por caractere da palavra, caso o nó atual da árvore tenha um ponteiro nulo para a letra selecionada durante a iteração, retornará falso, ou seja, a palavra desejada não é um prefixo para nenhuma das palavras do dicionário e enviará ao terminal \char`\"{}is not prefix\char`\"{} Caso contrário, percorrerá os filhos dos nós até chegar na última letra e verificará se é o final de uma palavra, através do método is\+End\+Of\+Word(). Se retornar verdadeiro, é uma palavra e enviará para o terminal aposição e o comrprimento da palavra, caso contrário, \char`\"{}is prefix\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & A palavra que será buscada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Se é um prefixo. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{trie_8cpp}{trie.\+cpp}\end{DoxyCompactItemize}

@@ -1,6 +1,6 @@
 /**
 *    @file main.cpp
-*    @brief Segundo trabalho da disciplina de Estrutura de Dados(INE5408).
+*    @brief Código do main.
 
 *    Propósito: Indexação e recuperação eficiente de palavras em grandes arquivos de dicionários (mantidos em memória secundária).
 *    @author Maria Eduarda de Melo Hang
@@ -29,7 +29,7 @@ int main() {
 
     parser.parsing(dicText, trie);
     
-    while (1) {  // leitura das palavras ate' encontrar "0"
+    while (1) {
         std:: cin >> word;
         if (word.compare("0") == 0) {
             break;

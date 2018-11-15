@@ -1,0 +1,86 @@
+\hypertarget{classstructures_1_1Parser}{}\section{structures\+:\+:Parser Class Reference}
+\label{classstructures_1_1Parser}\index{structures\+::\+Parser@{structures\+::\+Parser}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classstructures_1_1Parser_a62344223eabcf9cd5e2cf6f6b5ea2139}{Parser} (std\+::string \hyperlink{classstructures_1_1Parser_ac5ccd294f3176bcac3f1de2045e523ef}{file\+Name})
+\begin{DoxyCompactList}\small\item\em Construtor do \hyperlink{classstructures_1_1Parser}{Parser}. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classstructures_1_1Parser_a0c3fe341a7d74b1db953cc19eeba7062}{get\+Dic\+Text} ()
+\begin{DoxyCompactList}\small\item\em Armazenamento do texto do arquivo do dicionário. \end{DoxyCompactList}\item 
+void \hyperlink{classstructures_1_1Parser_a4cab45335029ece42ba0d79263621ace}{parsing} (std\+::string dic\+Text, \hyperlink{classstructures_1_1Trie}{structures\+::\+Trie} trie)
+\begin{DoxyCompactList}\small\item\em Extração das palavras, posições e comprimentos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classstructures_1_1Parser_ac5ccd294f3176bcac3f1de2045e523ef}{file\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe para o \hyperlink{classstructures_1_1Parser}{Parser}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstructures_1_1Parser_a62344223eabcf9cd5e2cf6f6b5ea2139}\label{classstructures_1_1Parser_a62344223eabcf9cd5e2cf6f6b5ea2139}} 
+\index{structures\+::\+Parser@{structures\+::\+Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!structures\+::\+Parser@{structures\+::\+Parser}}
+\subsubsection{\texorpdfstring{Parser()}{Parser()}}
+{\footnotesize\ttfamily structures\+::\+Parser\+::\+Parser (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor do \hyperlink{classstructures_1_1Parser}{Parser}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Nome do arquivo do dicionário. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classstructures_1_1Parser_a0c3fe341a7d74b1db953cc19eeba7062}\label{classstructures_1_1Parser_a0c3fe341a7d74b1db953cc19eeba7062}} 
+\index{structures\+::\+Parser@{structures\+::\+Parser}!get\+Dic\+Text@{get\+Dic\+Text}}
+\index{get\+Dic\+Text@{get\+Dic\+Text}!structures\+::\+Parser@{structures\+::\+Parser}}
+\subsubsection{\texorpdfstring{get\+Dic\+Text()}{getDicText()}}
+{\footnotesize\ttfamily std\+::string structures\+::\+Parser\+::get\+Dic\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Armazenamento do texto do arquivo do dicionário. 
+
+\begin{DoxyReturn}{Returns}
+O texto do dicionário. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classstructures_1_1Parser_a4cab45335029ece42ba0d79263621ace}\label{classstructures_1_1Parser_a4cab45335029ece42ba0d79263621ace}} 
+\index{structures\+::\+Parser@{structures\+::\+Parser}!parsing@{parsing}}
+\index{parsing@{parsing}!structures\+::\+Parser@{structures\+::\+Parser}}
+\subsubsection{\texorpdfstring{parsing()}{parsing()}}
+{\footnotesize\ttfamily void structures\+::\+Parser\+::parsing (\begin{DoxyParamCaption}\item[{std\+::string}]{dic\+Text,  }\item[{\hyperlink{classstructures_1_1Trie}{structures\+::\+Trie}}]{trie }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Extração das palavras, posições e comprimentos. 
+
+Primeiramente ocorrerá a extração da palavra através da procura pelos caracteres \textquotesingle{}\mbox{]}\textquotesingle{} (begin) e \textquotesingle{}\mbox{[}\textquotesingle{} (end\+Word). Posteriormente, será buscada o índice do caractere de quebra de linha (end). O comprimento será a diferença entre o índice begin e o end, enquanto que a posição será o próprio begin. A atualização do índice begin é realizada em saltos conforme o comprimento das linhas do dicionário. Por fim, a palavra será inserida na \hyperlink{classstructures_1_1Trie}{Trie}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dic\+Text} & O texto do dicionário. \\
+\hline
+{\em trie} & A árvore de indexação. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classstructures_1_1Parser_ac5ccd294f3176bcac3f1de2045e523ef}\label{classstructures_1_1Parser_ac5ccd294f3176bcac3f1de2045e523ef}} 
+\index{structures\+::\+Parser@{structures\+::\+Parser}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!structures\+::\+Parser@{structures\+::\+Parser}}
+\subsubsection{\texorpdfstring{file\+Name}{fileName}}
+{\footnotesize\ttfamily std\+::string structures\+::\+Parser\+::file\+Name}
+
+Nome do arquivo que o \hyperlink{classstructures_1_1Parser}{Parser} realizará a análise, 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{parser_8cpp}{parser.\+cpp}\end{DoxyCompactItemize}

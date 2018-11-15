@@ -2,8 +2,8 @@
 *    @file trie.cpp
 *    @brief Árvore de Prefixos que suporta os caracteres de a até z como nodos. 
 *    Não suporta acentos ou caracteres especiais para a inserção.
-*    @author Maria Eduarda de Melo Hang
-*    @date 15 November 2018
+*    @author Maria Eduarda de Melo Hang.
+*    @date 15 November 2018.
 */
 
 #ifndef STRUCTURES_TRIE_H
@@ -13,24 +13,20 @@
 #include <cstring>
 #include <iostream>
 
-#define K 26 /**< inteiro para guardar a linha do elemento da matriz */ 
+#define K 26 /**< constante para guardar a quantidade de caracteres do alfabeto. */ 
 
 
 namespace structures {
 /**
-*   @brief Leitura do arquivo xml e armazenamento do respectivo texto.
-*
-*   Primeiramente, tenta-se abrir o arquivo xml recebido no terminal, caso
-*   não seja possível, o programa sairá retorna 1 (erro). Após essa verificação,
-*   o ifstream source lerá caractere por caractere e concatenará com a variável
-*   local XMLtext e terminará quando encontrar o EOF.
-*
-*   @param xmlfilename Nome do arquivo xml que será aberto e lido.
-*   @return O texto do arquivo xml em formate de uma string.
+*   @brief Classe da Trie.
+*   Estrutura de Dados responsável pela indexação das palavras.
 */
 class Trie {
  public:
-    /** Construtor */
+    /**
+    *   @brief Construtor.
+    *   A Trie é construída com a raiz já instanciada, não pode existir nenhum caractere na raiz.
+    */
     Trie() {
         this->root = new Node('*');
     }
@@ -39,15 +35,15 @@ class Trie {
     ~Trie() = default;
 
     /**
-    *   @brief Leitura do arquivo xml e armazenamento do respectivo texto.
+    *   @brief Inserção na Trie.
     *
-    *   Primeiramente, tenta-se abrir o arquivo xml recebido no terminal, caso
-    *   não seja possível, o programa sairá retorna 1 (erro). Após essa verificação,
-    *   o ifstream source lerá caractere por caractere e concatenará com a variável
-    *   local XMLtext e terminará quando encontrar o EOF.
+    *   A inserção será por caractere da palavra recebida no parâmetro, sendo que a cada iteração o ponteiro it
+    *   receberá o filho correspondente ao caractere da palavra para inserir no próximo corretamente. O último
+    *   caractere da palavra receberá a posição e o comprimento dela, garantindo que ele é o final de uma palavra.
     *
-    *   @param xmlfilename Nome do arquivo xml que será aberto e lido.
-    *   @return O texto do arquivo xml em formate de uma string.
+    *   @param word A palavra que será inserida.
+    *   @param position A posição em que se encontra o primeiro caractere dessa palavra no dicionário. 
+    *   @param length O comprimento do texto correspondente da palavra no dicionário.
     */
     void insert(std::string word, unsigned long position, unsigned long length) {
         Node* it = this->root;
@@ -66,15 +62,17 @@ class Trie {
     }
 
     /**
-    *   @brief Leitura do arquivo xml e armazenamento do respectivo texto.
+    *   @brief Busca ma palavra na Trie e verifica se é um prefixo ou uma palavra.
     *
-    *   Primeiramente, tenta-se abrir o arquivo xml recebido no terminal, caso
-    *   não seja possível, o programa sairá retorna 1 (erro). Após essa verificação,
-    *   o ifstream source lerá caractere por caractere e concatenará com a variável
-    *   local XMLtext e terminará quando encontrar o EOF.
+    *   A busca será caractere por caractere da palavra, caso o nó atual da árvore tenha
+    *   um ponteiro nulo para a letra selecionada durante a iteração, retornará falso, ou seja, 
+    *   a palavra desejada não é um prefixo para nenhuma das palavras do dicionário e enviará ao terminal "is not prefix"
+    *   Caso contrário, percorrerá os filhos dos nós até chegar na última letra e verificará se é o final de uma palavra,
+    *   através do método isEndOfWord(). Se retornar verdadeiro, é uma palavra e enviará para o terminal aposição e o 
+    *   comrprimento da palavra, caso contrário, "is prefix".
     *
-    *   @param xmlfilename Nome do arquivo xml que será aberto e lido.
-    *   @return O texto do arquivo xml em formate de uma string.
+    *   @param word A palavra que será buscada.
+    *   @return Se é um prefixo.
     */
     bool isPrefix(std::string word) {
         Node* it = this->root;
@@ -87,10 +85,10 @@ class Trie {
                 return false;
             } else {
                 it = child;
-                if ( (i == word.size() - 1) && (child->isWord())) {
+                if ( (i == word.size() - 1) && (child->isEndOfWord())) {
                     std:: cout << it->dic_position << " " << it->dic_length << std:: endl;
                     return false;
-                } else if ( (i == word.size() - 1) && !(child->isWord()) ){
+                } else if ( (i == word.size() - 1) && !(child->isEndOfWord()) ){
                     std:: cout << "is prefix" << std:: endl;
                     return true;
                 }
@@ -99,32 +97,17 @@ class Trie {
     }
 
  private:
-    /**
-    *   @brief Classe para armazenar a linha e a coluna de um elemento da matriz.
-    *
-    *   Utilizada para o processo de rotulação de imagens binárias do trabalho,
-    *   guardará a linha e a coluna da respectiva matriz que está sendo rotulada.   
-    */
+    /** Classe para o nó da Trie. */
     struct Node {
-        char data; /**< inteiro para guardar a linha do elemento da matriz */ 
+        char data; /**< Caractere do alfabeto. */ 
 
-        Node* children[K]; /**< inteiro para guardar a linha do elemento da matriz */ 
+        Node* children[K]; /**< Vetor de ponteiros para os próximos nós. */ 
 
-        unsigned long dic_position; /**< inteiro para guardar a linha do elemento da matriz */ 
+        unsigned long dic_position; /**< Posição no arquivo do dicionário. */ 
  
-        unsigned long dic_length; /**< inteiro para guardar a linha do elemento da matriz */ 
+        unsigned long dic_length; /**< Compriemento da linha correspondente à palavra no arquivo do dicionário. */ 
 
-        /**
-        *   @brief Leitura do arquivo xml e armazenamento do respectivo texto.
-        *
-        *   Primeiramente, tenta-se abrir o arquivo xml recebido no terminal, caso
-        *   não seja possível, o programa sairá retorna 1 (erro). Após essa verificação,
-        *   o ifstream source lerá caractere por caractere e concatenará com a variável
-        *   local XMLtext e terminará quando encontrar o EOF.
-        *
-        *   @param xmlfilename Nome do arquivo xml que será aberto e lido.
-        *   @return O texto do arquivo xml em formate de uma string.
-        */
+        /** Construtor padrão. */
         Node() {
             this->data = ' ';
             this->dic_position = 0;
@@ -135,15 +118,8 @@ class Trie {
         }
 
         /**
-        *   @brief Leitura do arquivo xml e armazenamento do respectivo texto.
-        *
-        *   Primeiramente, tenta-se abrir o arquivo xml recebido no terminal, caso
-        *   não seja possível, o programa sairá retorna 1 (erro). Após essa verificação,
-        *   o ifstream source lerá caractere por caractere e concatenará com a variável
-        *   local XMLtext e terminará quando encontrar o EOF.
-        *
-        *   @param xmlfilename Nome do arquivo xml que será aberto e lido.
-        *   @return O texto do arquivo xml em formate de uma string.
+        *   @brief Construtor com o dado
+        *   @param data_ O caractere para ser colocado como data do nó.
         */
         explicit Node(const char& data_) {
             this->data = data_;
@@ -155,17 +131,10 @@ class Trie {
         }
 
         /**
-        *   @brief Leitura do arquivo xml e armazenamento do respectivo texto.
-        *
-        *   Primeiramente, tenta-se abrir o arquivo xml recebido no terminal, caso
-        *   não seja possível, o programa sairá retorna 1 (erro). Após essa verificação,
-        *   o ifstream source lerá caractere por caractere e concatenará com a variável
-        *   local XMLtext e terminará quando encontrar o EOF.
-        *
-        *   @param xmlfilename Nome do arquivo xml que será aberto e lido.
-        *   @return O texto do arquivo xml em formate de uma string.
+        *   @brief Verificação do término de uma palavra em um nó.
+        *   @return Se é o final de uma palavra.
         */
-        bool isWord() {
+        bool isEndOfWord() {
             if (this->dic_position >= 0 && this->dic_length > 0) {
                 return true;
             }
@@ -173,7 +142,7 @@ class Trie {
         }
     };
 
-    Node* root; /**< inteiro para guardar a linha do elemento da matriz */ 
+    Node* root; /**< Nó raiz da Trie. */ 
 };
 
 }  // namespace structures

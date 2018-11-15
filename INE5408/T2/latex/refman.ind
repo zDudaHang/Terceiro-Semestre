@@ -1,0 +1,57 @@
+\begin{theindex}
+
+  \item {$\sim$\+Trie}
+    \subitem {structures\+::\+Trie}, \hyperpage{7}
+
+  \indexspace
+
+  \item {file\+Name}
+    \subitem {structures\+::\+Parser}, \hyperpage{6}
+
+  \indexspace
+
+  \item {get\+Dic\+Text}
+    \subitem {structures\+::\+Parser}, \hyperpage{6}
+
+  \indexspace
+
+  \item {insert}
+    \subitem {structures\+::\+Trie}, \hyperpage{7}
+  \item {is\+Prefix}
+    \subitem {structures\+::\+Trie}, \hyperpage{8}
+
+  \indexspace
+
+  \item {K}
+    \subitem {trie.\+cpp}, \hyperpage{12}
+
+  \indexspace
+
+  \item {main.\+cpp}, \hyperpage{9}
+
+  \indexspace
+
+  \item {Parser}
+    \subitem {structures\+::\+Parser}, \hyperpage{5}
+  \item {parser.\+cpp}, \hyperpage{10}
+  \item {parsing}
+    \subitem {structures\+::\+Parser}, \hyperpage{6}
+
+  \indexspace
+
+  \item {structures\+::\+Parser}, \hyperpage{5}
+    \subitem {file\+Name}, \hyperpage{6}
+    \subitem {get\+Dic\+Text}, \hyperpage{6}
+    \subitem {Parser}, \hyperpage{5}
+    \subitem {parsing}, \hyperpage{6}
+  \item {structures\+::\+Trie}, \hyperpage{7}
+    \subitem {$\sim$\+Trie}, \hyperpage{7}
+    \subitem {insert}, \hyperpage{7}
+    \subitem {is\+Prefix}, \hyperpage{8}
+
+  \indexspace
+
+  \item {trie.\+cpp}, \hyperpage{11}
+    \subitem {K}, \hyperpage{12}
+
+\end{theindex}

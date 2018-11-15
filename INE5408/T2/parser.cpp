@@ -1,7 +1,6 @@
 /**
-*    @file trie.cpp
-*    @brief Árvore de Prefixos que suporta os caracteres de a até z como nodos. 
-*    Não suporta acentos ou caracteres especiais para a inserção.
+*    @file parser.cpp
+*    @brief Parser dos arquivos dos dicionários.
 *    @author Maria Eduarda de Melo Hang
 *    @date 15 November 2018
 */
@@ -17,46 +16,22 @@
 #include "trie.cpp"
 
 namespace structures {
-/**
-*   @brief Leitura do arquivo xml e armazenamento do respectivo texto.
-*
-*   Primeiramente, tenta-se abrir o arquivo xml recebido no terminal, caso
-*   não seja possível, o programa sairá retorna 1 (erro). Após essa verificação,
-*   o ifstream source lerá caractere por caractere e concatenará com a variável
-*   local XMLtext e terminará quando encontrar o EOF.
-*
-*   @param xmlfilename Nome do arquivo xml que será aberto e lido.
-*   @return O texto do arquivo xml em formate de uma string.
-*/
+/** Classe para o Parser. */
 class Parser {
  public:
 	/**
-	*   @brief Leitura do arquivo xml e armazenamento do respectivo texto.
-	*
-	*   Primeiramente, tenta-se abrir o arquivo xml recebido no terminal, caso
-	*   não seja possível, o programa sairá retorna 1 (erro). Após essa verificação,
-	*   o ifstream source lerá caractere por caractere e concatenará com a variável
-	*   local XMLtext e terminará quando encontrar o EOF.
-	*
-	*   @param xmlfilename Nome do arquivo xml que será aberto e lido.
-	*   @return O texto do arquivo xml em formate de uma string.
+	*   @brief Construtor do Parser.
+	*   @param fileName Nome do arquivo do dicionário.
 	*/
  	Parser(std::string fileName) {
  		this->fileName = fileName;
  	}
 
- 	std::string fileName; /**< inteiro para guardar a linha do elemento da matriz */ 
+ 	std::string fileName; /**< Nome do arquivo que o Parser realizará a análise, */ 
 
  	/**
-	*   @brief Leitura do arquivo xml e armazenamento do respectivo texto.
-	*
-	*   Primeiramente, tenta-se abrir o arquivo xml recebido no terminal, caso
-	*   não seja possível, o programa sairá retorna 1 (erro). Após essa verificação,
-	*   o ifstream source lerá caractere por caractere e concatenará com a variável
-	*   local XMLtext e terminará quando encontrar o EOF.
-	*
-	*   @param xmlfilename Nome do arquivo xml que será aberto e lido.
-	*   @return O texto do arquivo xml em formate de uma string.
+	*   @brief Armazenamento do texto do arquivo do dicionário.
+	*   @return O texto do dicionário.
 	*/
  	std::string getDicText() {
  		std::ifstream source(fileName);
@@ -73,15 +48,16 @@ class Parser {
  	}
 
  	/**
-	*   @brief Leitura do arquivo xml e armazenamento do respectivo texto.
+	*   @brief Extração das palavras, posições e comprimentos.
 	*
-	*   Primeiramente, tenta-se abrir o arquivo xml recebido no terminal, caso
-	*   não seja possível, o programa sairá retorna 1 (erro). Após essa verificação,
-	*   o ifstream source lerá caractere por caractere e concatenará com a variável
-	*   local XMLtext e terminará quando encontrar o EOF.
+	*   Primeiramente ocorrerá a extração da palavra através da procura pelos caracteres ']' (begin) e '[' (endWord).
+	*	Posteriormente, será buscada o índice do caractere de quebra de linha (end). O comprimento será a diferença
+	*	entre o índice begin e o end, enquanto que a posição será o próprio begin. A atualização do índice begin
+	*	é realizada em saltos conforme o comprimento das linhas do dicionário. Por fim, a palavra será inserida
+	*	na Trie.
 	*
-	*   @param xmlfilename Nome do arquivo xml que será aberto e lido.
-	*   @return O texto do arquivo xml em formate de uma string.
+	*   @param dicText O texto do dicionário.
+	*	@param trie A árvore de indexação.
 	*/
  	void parsing(std::string dicText, structures::Trie trie) {
  		size_t begin = 0, endWord, end;
