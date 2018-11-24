@@ -1,0 +1,57 @@
+2.19.4 a)
+
+int f(int a, int b, int c) {
+	return func( func(a,b), c);
+}
+
+int func(int a, int b);
+
+F:  addi $sp, $sp, -4
+	sw $ra, 0 ($sp)
+	jal func
+	add $a0, $v0, $0
+	add $a1, $a2, $0
+	jal func
+	lw $ra, 0 ($sp)
+	addi $sp, $sp, 4
+	jr $ra
+
+------------------------------------------------------- // -------------------------------------------------------
+
+2.19.4 b)
+
+int f(int a, int b, int c) {
+	return func(a,b) + func(b,c);
+}
+
+int func(int a, int b);
+
+--> Preciso guardar o $t0 e o $t1?
+
+--> Usando $t0 e $t1:
+
+F:  addi $sp, $sp, -4
+	add $t0, $a1, $0
+	jal func
+	add $t1, $v0, $0
+	add $a0, $t0, $0
+	add $a1, $a2, $0
+	jal func
+	add $v0, $v0, $t1
+	lw $ra, 0 ($sp)
+	addi $sp, $sp, 4
+	jr $ra
+
+--> Usando $s0 e $s1:
+
+F:  addi $sp, $sp, -4
+	add $s0, $a1, $0
+	jal func
+	add $s1, $v0, $0
+	add $a0, $s0, $0
+	add $a1, $a2, $0
+	jal func
+	add $v0, $v0, $s1
+	lw $ra, 0 ($sp)
+	addi $sp, $sp, 4
+	jr $ra
